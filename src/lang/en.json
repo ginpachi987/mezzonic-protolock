@@ -1,0 +1,14 @@
+{
+  "newGame": "New Game",
+  "reset": "Reset",
+  "tip": "How to play",
+  "title": "Mezzonic Protolock",
+  "tutorial": [
+    "The goal of this game is to switch all the lights off, preferably in as few button presses as possible. Every cell also inverts 4 cells around it (up, down, left, right).",
+    "Off",
+    "On",
+    "Example",
+    "Try to search for patterns resembing a cross and click on the central cell in it. Order of solving doesn't matter.",
+    "Patterns are not always that easy to find. Try resetting the field and starting over from different cell if you feel stuck. With time you'll begin to see more of this hidden patterns."
+  ]
+}

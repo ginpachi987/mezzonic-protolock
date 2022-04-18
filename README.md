@@ -7,7 +7,7 @@ The goal of this game is to switch all the lights off, preferably in as few butt
 
 Live version can be found [here](https://games.yoro.dev/mezzonic/).
 
-![preview!](preview.png)
+![preview!](preview.jpg)
 
 ## Commands
 ### Installation

@@ -5,83 +5,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-  <title>Turn off the Light</title>
-  <style>
-    body {
-      background-color: #282828;
-      font-family: sans-serif;
-    }
-
-    .buttons {
-      position: fixed;
-      bottom: 40px;
-      left: calc(50% - 100px);
-    }
-
-    button {
-      width: 100px;
-      height: 40px;
-    }
-
-    nav {
-      position: fixed;
-      display: block;
-      width: 100%;
-      background-color: #212529;
-      color: white;
-      height: 52px;
-      /* line-height: 52px; */
-    }
-
-    .links {
-      width: 100%;
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-    }
-
-    nav a {
-      padding-top: 8px;
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.5s ease-in;
-    }
-
-    nav a:hover {
-      background-color: #61666b;
-    }
-
-    nav img {
-      display: block;
-      margin: 0 auto;
-      width: 24px;
-      border-radius: 4px;
-      border: 1px solid white;
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="https://games.yoro.dev/favicon.svg" />
+  <title>Yoro Games - Mezzonic Protolock</title>
 </head>
 
 <body style="margin: 0; padding: 0; overflow: hidden;">
-  <nav>
-    <div class="links">
+  <div class="wrapper">
+    <nav>
       <a id="home" href="../">&lsaquo; Back to Yoro Games</a>
-    </div>
-  </nav>
+    </nav>
+    <div id="game">
 
-  <div class="buttons">
-    <button id="new">New Game</button>
-    <button id="reset">Reset</button>
+    </div>
+    <div class="buttons">
+      <div class="button">
+        <div class="inner" id="new">
+          <div id="new-game" class="text"></div>
+        </div>
+      </div>
+
+      <div class="button">
+        <div class="inner" id="reset">
+          <div id="reset-text" class="text"></div>
+        </div>
+      </div>
+
+      <div class="button">
+        <div id="tip">How to play</div>
+        <div class="inner" id="tutorial-button">
+          <div class="text">?</div>
+        </div>
+      </div>
+    </div>
+    <div id="tutorial-wrapper">
+    </div>
   </div>
 
-  <script src="../common/p5js/p5.js"></script>
-  <script src="./main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>
