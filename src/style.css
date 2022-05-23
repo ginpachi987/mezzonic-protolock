@@ -283,3 +283,11 @@ main {
   content: '';
   background: #ffffff1a;
 }
+
+.version {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 14px;
+  color: lightgray;
+}

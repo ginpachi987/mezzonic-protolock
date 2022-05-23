@@ -1,15 +1,14 @@
-import offImage from './img/off.png'
-import onImage from './img/on.png'
+import { Cell } from "./cell"
 
 export class Field {
-  constructor(size, container) {
+  constructor(container, size = 5) {
     this.size = size
     this.container = container
     this.checked = []
     this.cells = [...Array(size)].map(() => [...Array(size).keys()].map(() => new Cell()))
 
     this.cells.forEach((row, i) => {
-      let $row = document.createElement('div')
+      const $row = document.createElement('div')
       $row.classList.add('row')
       row.forEach((cell, j) => {
         cell.el.addEventListener('click', () => {
@@ -43,28 +42,24 @@ export class Field {
   }
 
   victoryCheck() {
-    let victory = true
-
+    let win = true
     for (let i = 0; i < this.size; i++) {
       for (let j = 0; j < this.size; j++) {
         if (this.cells[i][j].state) {
-          victory = false
+          win = false
           break
         }
-        if (!victory) break
+        if (!win) break
       }
     }
 
-    if (victory) {
+    if (win) {
       this.container.style.pointerEvents = 'none'
       this.flicker()
 
       setTimeout(() => {
-        // console.log('Yay!')
         this.newField()
         this.container.style.pointerEvents = 'auto'
-
-        window.top.postMessage("registerWin", '*')
       }, this.size * 250)
 
     }
@@ -73,8 +68,8 @@ export class Field {
   newField() {
     this.checked = []
     while (this.checked.length < this.size) {
-      let x = Math.floor(Math.random() * this.size)
-      let y = Math.floor(Math.random() * this.size)
+      const x = Math.floor(Math.random() * this.size)
+      const y = Math.floor(Math.random() * this.size)
       if (!this.checked.find(el => el.x == x && el.y == y)) {
         this.checked.push({ x: x, y: y })
       }
@@ -113,7 +108,7 @@ export class Field {
 
   resize(width) {
     this.container.style.width = `${width}px`
-    let cellSize = width / this.size
+    const cellSize = width / this.size
 
     this.cells.forEach(row => {
       row.forEach(cell => {
@@ -124,23 +119,3 @@ export class Field {
     })
   }
 }
-
-export class Cell {
-  constructor(state = false) {
-    this.state = state
-    this.el = document.createElement('div')
-    this.el.classList.add('cell')
-    this.el.style.backgroundImage = `url('${this.state ? onImage : offImage}')`
-  }
-
-  toggleState(state) {
-    this.state = state == undefined ? !this.state : state
-    this.el.style.backgroundImage = `url('${this.state ? onImage : offImage}')`
-  }
-
-  toggleHighlight() {
-    this.el.classList.toggle('highlight')
-  }
-}
-
-export { offImage, onImage }
