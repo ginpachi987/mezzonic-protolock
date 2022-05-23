@@ -8,7 +8,7 @@ const fieldSize = 5
 const maxWidth = 480
 let field
 
-const container = document.querySelector('#game')
+const container = document.querySelector('.game')
 
 let lang = langs.en
 let tip

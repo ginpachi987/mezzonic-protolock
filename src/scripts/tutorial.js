@@ -25,20 +25,20 @@ export function showTutorial(showTip, lang) {
   tutorial.appendChild(closeButton)
 
   const header = document.createElement('h1')
-  header.innerHTML = lang.title || en.title
+  header.innerHTML = lang.title || langs.en.title
 
   tutorial.appendChild(header)
   tutorial.appendChild(document.createElement('hr'))
 
   let p = document.createElement('p')
-  p.innerHTML = lang.tutorial[0] || en.tutorial[0]
+  p.innerHTML = lang.tutorial[0] || langs.en.tutorial[0]
 
   tutorial.appendChild(p)
 
   const disp = document.createElement('div')
   disp.classList.add('tut-display')
   p = document.createElement('p')
-  p.innerHTML = (lang.tutorial[1] || en.tutorial[1]) + ' ->'
+  p.innerHTML = (lang.tutorial[1] || langs.en.tutorial[1]) + ' ->'
   disp.appendChild(p)
   const offCell = document.createElement('div')
   offCell.classList.add('cell')
@@ -49,16 +49,16 @@ export function showTutorial(showTip, lang) {
   onCell.style.backgroundImage = `url('${onImage}')`
   disp.appendChild(onCell)
   p = document.createElement('p')
-  p.innerHTML = '<- ' + (lang.tutorial[2] || en.tutorial[2])
+  p.innerHTML = '<- ' + (lang.tutorial[2] || langs.en.tutorial[2])
   disp.appendChild(p)
   tutorial.appendChild(disp)
 
   let h2 = document.createElement('h2')
-  h2.innerHTML = `${lang.tutorial[3] || en.tutorial[3]} 1`
+  h2.innerHTML = `${lang.tutorial[3] || langs.en.tutorial[3]} 1`
   tutorial.appendChild(h2)
 
   p = document.createElement('p')
-  p.innerHTML = lang.tutorial[4] || en.tutorial[4]
+  p.innerHTML = lang.tutorial[4] || langs.en.tutorial[4]
   tutorial.appendChild(p)
 
   let div = document.createElement('div')
@@ -68,11 +68,11 @@ export function showTutorial(showTip, lang) {
   tutorial.appendChild(div)
 
   h2 = document.createElement('h2')
-  h2.innerHTML = `${lang.tutorial[3] || en.tutorial[3]} 2`
+  h2.innerHTML = `${lang.tutorial[3] || langs.en.tutorial[3]} 2`
   tutorial.appendChild(h2)
 
   p = document.createElement('p')
-  p.innerHTML = lang.tutorial[5] || en.tutorial[5]
+  p.innerHTML = lang.tutorial[5] || langs.en.tutorial[5]
   tutorial.appendChild(p)
 
   div = document.createElement('div')
